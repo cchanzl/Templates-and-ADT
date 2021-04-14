@@ -1,4 +1,5 @@
 #include <iostream>
+#include <climits>
 
 template<class T, const int MAXCAP = INT_MAX>
 class ExtendableArray{
@@ -16,7 +17,7 @@ private:
 
 public:
   // constructor
-  ExtendableArray(int cap = 10): ount(0){
+  ExtendableArray(int cap = 10): count(0){
     if ( cap < 0 )cap = 0;
     else if (cap > MAXCAP) cap = MAXCAP;
     capacity = cap;
@@ -86,5 +87,13 @@ public:
     count--;
     return true;    
   }
- 
+
+  void print(){
+    for ( int i = 0; i < count; i++){
+      std::cout << store[i] << " ";
+      if ( i == count-1 ) std::cout << std::endl;
+    }
+  }
+
+  
 };
