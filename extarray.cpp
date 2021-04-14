@@ -41,6 +41,11 @@ public:
     return store[index];
   }
 
+  T& operator[](int const index)const { // overload so that it accepts const input
+    return store[index];
+  }
+
+  
   bool ensureCapacity(int cap){
     if (cap>MAXCAP) return false;
 
